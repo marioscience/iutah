@@ -5,7 +5,9 @@ from django.http import HttpResponse
 from mdfserver.models import Page, Subpage
 
 def index(request):
-    return render(request, 'mdfserver/index.html')
+    pages_in_server = Page.objects.all().order_by('-title')[:5]
+    context = {'pages': pages_in_server}
+    return render(request, 'mdfserver/index.html', context)
 
 def pages(request, pages_passed):
     pages_in_server = Page.objects.all().order_by('-title')[:5]
