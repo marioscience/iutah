@@ -1,0 +1,44 @@
+{% if pages %}
+    <ul id="navbar">
+        {% for page in pages %}
+            <li class="navbutton"><a href="/mdfserver/{{ page.title }}">{{ page.title }}</a></li>
+            <ul class="subnavbar">
+            {% for subpage in page.subpage_set.all %}
+                <li class="subbutton"><a href="{{ subpage.title }}">{{ subpage.title }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+
+        {% for page in pages %}
+            {% if subpage_name %}
+                {% if requested == page.title %}
+                    {% for subpage in page.set.all %}
+                        {% if subpage_name == subpage %}
+                            <h1>{{ subpage.title }}</h1>
+                            <p>{{ subpage.content }}</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% elif requested == page.title %}
+                <h1>{{ page.title }}</h1>
+                <p>{{ page.content }}</p>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{%  else %}
+    <p>There's something really, really wrong</p>
+{% endif %}
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html> -->
