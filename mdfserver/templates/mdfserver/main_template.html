@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ requested }} {% if subpage_name %} | {{ subpage_name }} {% endif %} </title>
-</head>
-<body>
-
-{% if pages %}
-    <ul id="navbar">
-        {% for page in pages %}
-            <li class="navbutton"><a href="/mdfserver/{{ page.title }}">{{ page.title }}</a></li>
-            <ul class="subnavbar">
-            {% for subpage in page.subpage_set.all %}
-                <li class="subbutton"><a href="/mdfserver/{{ page }}/{{ subpage.title }}">{{ subpage.title }}</a></li>
-            {% endfor %}
-            </ul>
-        {% endfor %}
-       </ul>
-
-        <p>Requested: {{  requested }}</p>
-        <p>SubPage: {{ subpage_name }}</p>
-
-
-
-
-        <div style="border: 1px solid black">
+{%  extends "general.html" %}
+{% block content %}
+<div style="border: 1px solid black">
         {% for page in pages %}
             {% if subpage_name %}
                 {% if requested == page.title %}
@@ -39,18 +16,5 @@
                 {{ page.content | safe}}
             {% endif %}
         {% endfor %}
-        </div>
-
-{%  else %}
-    <p>There's something really, really wrong</p>
-{% endif %}
-
-
-
-
-
-
-
-
-</body>
-</html>
+{% endblock %}
+</div>

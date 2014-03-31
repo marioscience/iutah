@@ -1,0 +1,47 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ requested }} {% if subpage_name %} | {{ subpage_name }} {% endif %} </title>
+</head>
+<body>
+
+{% if pages %}
+    <ul id="navbar">
+            <li class="navbutton">
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+        {% for page in pages %}
+            <li class="navbutton">
+                {% if page.content != 'none' %}
+                    <a href="{% url 'pages' page.title %}">{{ page.title }}</a>
+                {% else %}<p>{{ page.title }}</p>
+                {%  endif %}
+            </li>
+            <ul class="subnavbar">
+            {% for subpage in page.subpage_set.all %}
+                <li class="subbutton">
+                    <a href="{% url 'subpages' page subpage.title %}">{{ subpage.title }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+       </ul>
+
+    {% block content %}{% endblock %}
+
+
+{%  else %}
+    <p>There's something really, really wrong</p>
+{% endif %}
+
+
+
+
+
+
+
+
+</body>
+</html>
