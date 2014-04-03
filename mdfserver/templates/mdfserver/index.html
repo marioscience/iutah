@@ -4,48 +4,53 @@
 <head>
     <meta charset="utf-8">
     <title>{% if requested %}
-                {{ requested }}
-            {% else %}
-                Home
-            {% endif %}
-            {% if subpage_name %}
-                   | {{ subpage_name }}
-            {% endif %}
+        {{ requested }}
+    {% else %}
+        Home
+    {% endif %}
+        {% if subpage_name %}
+            | {{ subpage_name }}
+        {% endif %}
     </title>
     <link rel="stylesheet" href="{% static  "mdfserver/css/bootstrap.css" %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static  "mdfserver/css/custom_style.css" %}" type="text/css"/>
 
 </head>
 <body>
-<div class="container">
-    <div id="page-header">
-        <img id="iutah_logo" src="{% static "mdfserver/img/iutah_logo.png" %}" alt="iUtah Logo"/>
 
-        <h1 id="main_title">Modeling and Data Federation</h1>
+<div id="page-header">
 
-        <h2 id="second_title">innovative Urban Transitions and Aridregion Hydro-sustainability</h2>
 
-        {% if pages %}
-            <div class="navbar">
-                <div class="navbar-inner">
+    {% if pages %}
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center_header">
+                    <div id="title_logo">
+                        <a id="home_linker" href="{% url 'index' %}"><img id="iutah_logo" src="{% static "mdfserver/img/iutah_logo.png" %}" alt="iUtah Logo"/>
+
+                        <h1 id="main_title">Modeling and Data Federation</h1>
+
+                        <h4 id="second_title">innovative Urban Transitions and Aridregion Hydro-sustainability</h4></a>
+                    </div>
                     <div class="container">
                         <ul class="nav">
-                            <li class="navbutton">
-                                <a class="active" href="{% url 'index' %}">Home</a>
+                            <li {% if not requested %}class="active"{% endif %}>
+                                <a href="{% url 'index' %}">Home</a>
                             </li>
                             {% for page in pages %}
-                                <li class="dropdown">
+                                <li {% if requested == page.title %}class="dropdown active" {% else %}class="dropdown" {% endif %} >
                                     {% if page.content != 'none' %}
-                                        <a class="dropdown-toggle" href="{% url 'pages' page.title %}">
-                                            {{ page.title }}
-                                            <b class="caret"></b>
+                                        <a class="dropdown-toggle"  data-hover="dropdown" href="{% url 'pages' page.title %}">
+                                             {{ page.title }}
+                                        <b class="caret"></b>
                                         </a>
                                     {% else %}
-                                        <a class="dropdown-toggle">
-                                            {{ page.title }}
+                                        <a class="dropdown-toggle" data-hover="dropdown">
+                                             {{ page.title }}
                                             <b class="caret"></b>
                                         </a>
                                     {% endif %}
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                         {% for subpage in page.subpage_set.all %}
                                             <li>
                                                 <a href="{% url 'subpages' page subpage.title %}">{{ subpage.title }}</a>
@@ -58,14 +63,21 @@
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
+        </div>
 
-            {% if requested %}
-                {% block content %}{% endblock %}
-            {% else %}
-                {% block homepage %}{% endblock %}
-            {% endif %}
-            <footer>
+        <div class="container">
+            <div id="spacer">
+
+                {% if requested %}
+                    {% block content %}{% endblock %}
+                {% else %}
+                    {% block homepage %}{% endblock %}
+                {% endif %}
+            </div>
+        </div>
+        <footer class="navbar-inner">
+            <div class="center_header">
                 {% if not requested %}
                     {% block links %} {% endblock %}
                 {% endif %}
@@ -88,14 +100,18 @@
                              height="80">
                     </a>
                 </aside>
-            </footer>
             </div>
+        </footer>
 
-        {% else %}
-            <p>There's something really, really wrong</p>
-        {% endif %}
+
+    {% else %}
+        <p>There's something really, really wrong</p>
+    {% endif %}
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="{% static "mdfserver/js/bootstrap.js" %}"></script>
+<script src="{% static "mdfserver/js/dropdown-hover.js" %}"></script>
+<script src="{% static "mdfserver/js/code.js" %}"></script>
+
 </body>
 </html>
