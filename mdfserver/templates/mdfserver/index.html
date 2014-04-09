@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{% if requested %}
+    <title>iUTAH | {% if requested %}
         {{ requested }}
     {% else %}
         Home
@@ -12,6 +12,8 @@
             | {{ subpage_name }}
         {% endif %}
     </title>
+    <link rel="shortcut icon" href="{% static "mdfserver/img/favicon.ico" %}" type="image/x-icon">
+    <link rel="icon" href="{% static "mdfserver/img/favicon.ico" %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static  "mdfserver/css/bootstrap.css" %}" type="text/css"/>
     <link rel="stylesheet" href="{% static  "mdfserver/css/custom_style.css" %}" type="text/css"/>
 
@@ -34,8 +36,8 @@
                     </div>
                     <div class="container">
                         <ul class="nav">
-                            <li {% if not requested %}class="active"{% endif %}>
-                                <a href="{% url 'index' %}">Home</a>
+                            <li {% if not requested %}class="active"{% else %} class="dropdown" {% endif %}>
+                                <a class="dropdown-toggle" data-hover="dropdown" href="{% url 'index' %}">Home</a>
                             </li>
                             {% for page in pages %}
                                 <li {% if requested == page.title %}class="dropdown active" {% else %}class="dropdown" {% endif %} >
@@ -76,7 +78,7 @@
                 {% endif %}
             </div>
         </div>
-        <footer class="navbar-inner">
+        <footer style="height: 220px" class="navbar-inner">
             <div class="center_header">
                 {% if not requested %}
                     {% block links %} {% endblock %}

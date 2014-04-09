@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block homepage %}
-    <div style="padding-top: 0px;" id="site_content">
+    <div style="border: 1px solid rgb(220, 225, 230); padding-top: 0px;" id="site_content">
 
         <div id="content">
             <h1></h1>
@@ -28,12 +28,17 @@
             <div id="box">
                 <ul id="slider">
                     <li style="list-style-type: none" id="1" class="currentSlide">
-                        <img src="http://data.iutahepscor.org/mdf/sites/default/files/webform/banner/images/Trial%20Lake%20SNOTEL%20Site.jpg"
+                        <img class="big_image"
+                             src="http://data.iutahepscor.org/mdf/sites/default/files/webform/banner/images/Trial%20Lake%20SNOTEL%20Site.jpg"
                              alt="">
 
-                        <p>
-                            <span><span>We are conducting a data inventory. Let us know about datasets that you will be using or creating. <a
-                                    class="banner-button" href="./data-inventory">Submit Dataset Information</a></span></span>
+                        <p class="image_msg">
+                            <span style="font-size: 12px; margin-left: 10%"><em>We are conducting a data inventory. Let
+                                us know about datasets that you will be using or creating.
+                                <wbr>
+                                <a
+                                        class="banner-button" href="./data-inventory">Submit Dataset
+                                    Information</a></em></span>
 
                         </p>
                     </li>
@@ -56,31 +61,44 @@
 
 
                             <div class="content">
-                                <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                                <div style="padding-left: 20px;padding-right: 20px;"
+                                     class="field field-name-body field-type-text-with-summary field-label-hidden">
                                     <div class="field-items">
                                         <div class="field-item even" property="content:encoded">
                                             <div class="item-page">
-                                                <p>The iUTAH Modeling and Data Federation is an online system for
-                                                    sharing data, models, and other digital resources.&nbsp; Activities
-                                                    of the iUTAH Cyberinfrastructure Team (CI Team) are focused on
-                                                    developing hardware and software systems and tools that improve
-                                                    iUTAH participants’ capacity for data collection, organization,
-                                                    management, sharing, synthesis to higher-level products, and
-                                                    integration with models.</p>
+                                                <section class="column_left">
+                                                <h1>About Us</h1>
+                                                    <p>The iUTAH Modeling and Data Federation is an online system for
+                                                        sharing data, models, and other digital resources.&nbsp;
+                                                        Activities
+                                                        of the iUTAH Cyberinfrastructure Team (CI Team) are focused on
+                                                        developing hardware and software systems and tools that improve
+                                                        iUTAH participants’ capacity for data collection, organization,
+                                                        management, sharing, synthesis to higher-level products, and
+                                                        integration with models.</p>
+                                                </section>
 
-                                                <h2>Announcements</h2>
+                                                <section class="column_right">
+                                                    <h2>Announcements</h2>
 
-                                                <p><strong>Data Inventory: </strong>As an initial step in developing the
-                                                    iUTAH Modeling and Data Federation, we are conducting a survey of
-                                                    existing and planned datasets.<br><a href="./data-inventory">Click
-                                                        here</a> to submit dataset information to the iUTAH data
-                                                    inventory or view the list of datasets that have been submitted.</p>
+                                                    <p><strong>Data Inventory: </strong>As an initial step in developing
+                                                        the
+                                                        iUTAH Modeling and Data Federation, we are conducting a survey
+                                                        of
+                                                        existing and planned datasets.<br><a href="./data-inventory">Click
+                                                            here</a> to submit dataset information to the iUTAH data
+                                                        inventory or view the list of datasets that have been submitted.
+                                                    </p>
 
-                                                <p><strong>Model Inventory: </strong>We are collecting information about
-                                                    models from a variety of disciplines that may be of interest to your
-                                                    iUTAH-related research.<br><a href="./model-inventory">Click
-                                                        here</a> to submit model information to the iUTAH data inventory
-                                                    or view the list of models that have been submitted.</p>
+                                                    <p><strong>Model Inventory: </strong>We are collecting information
+                                                        about
+                                                        models from a variety of disciplines that may be of interest to
+                                                        your
+                                                        iUTAH-related research.<br><a href="./model-inventory">Click
+                                                            here</a> to submit model information to the iUTAH data
+                                                        inventory
+                                                        or view the list of models that have been submitted.</p>
+                                                </section>
                                             </div>
                                         </div>
                                     </div>
