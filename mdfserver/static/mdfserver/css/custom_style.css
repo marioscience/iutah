@@ -79,6 +79,7 @@
 #site_content {
     padding-top: 20px;
     padding-bottom: 20px;
+    min-height: 575px;
 }
 
 /*Experimenting from here on*/
@@ -96,6 +97,20 @@ html {
 
 article, aside, figure, footer, header, hgroup, nav, section {
     display: block;
+}
+
+.column_left
+{
+    width: 350px;
+    float: left;
+}
+
+.column_right
+{
+    width: 460px;
+    float: right;
+    border-left: 1px dotted lightblue;
+    padding-left: 30px;
 }
 
 body {
@@ -491,6 +506,7 @@ footer {
 
     font: 89% Tahoma, Geneva, sans-serif;
     height: 68px;
+    margin-top: -5px;
     padding: 15px 0 15px 0;
     color: #6D6E71;
     background: #333;
