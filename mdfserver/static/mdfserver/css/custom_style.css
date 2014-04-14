@@ -99,14 +99,12 @@ article, aside, figure, footer, header, hgroup, nav, section {
     display: block;
 }
 
-.column_left
-{
+.column_left {
     width: 350px;
     float: left;
 }
 
-.column_right
-{
+.column_right {
     width: 460px;
     float: right;
     border-left: 1px dotted lightblue;
@@ -156,7 +154,7 @@ p {
     font-size: 16px;
 }
 
-h2+p{
+h2 + p {
     border-top-style: groove;
     border-top-left-radius: 4px;
     border-top-right-radius: 10px;
@@ -173,39 +171,36 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-table
-{
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	font-size: 12px;
-	margin: 20px 0px;
-	width: 100%;
-	text-align: left;
-	border-collapse: collapse;
-	border: 1px solid #69c;
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 20px 0px;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid #69c;
 }
 
-th
-{
-	padding: 7px 25px;
-	font-weight: normal;
-	font-size: 14px;
-	color: #039;
-}
-tbody
-{
-	background: #e8edff;
-}
-td
-{
-	padding: 7px 25px;
-	color: #669;
-	border-top: 1px dashed #fff;
+th {
+    padding: 7px 25px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #039;
 }
 
-tbody tr:hover td
-{
-	color: #339;
-	background: #d0dafd;
+tbody {
+    background: #e8edff;
+}
+
+td {
+    padding: 7px 25px;
+    color: #669;
+    border-top: 1px dashed #fff;
+}
+
+tbody tr:hover td {
+    color: #339;
+    background: #d0dafd;
 }
 
 /*
@@ -269,21 +264,19 @@ a:hover {
 
 }
 
-strong
-{
+strong {
     color: #425766;
 }
 
-a{
-        color: #6F8A9E;
+a {
+    color: #6F8A9E;
 }
 
-h1{
+h1 {
     font-size: 29px;
 }
 
-h2
-{
+h2 {
     font-size: 22px;
     border-bottom: 2px lightgray;
     border-bottom-style: solid;
@@ -515,8 +508,8 @@ footer {
 /
 /
 background:
-
 -moz-linear-gradient
+
 (
 #444, #222
 
@@ -525,8 +518,8 @@ background:
 /
 /
 background:
-
 -o-linear-gradient
+
 (
 #444, #222
 
@@ -535,16 +528,16 @@ background:
 /
 /
 background:
-
 -webkit-linear-gradient
+
 (
 #444, #222
 
 )
 ;
 -webkit-box-shadow:
-
 rgba
+
 (
 0
 ,
@@ -565,8 +558,8 @@ px
 
 ;
 -moz-box-shadow:
-
 rgba
+
 (
 0
 ,
@@ -587,8 +580,8 @@ px
 
 ;
 box-shadow:
-
 rgba
+
 (
 0
 ,
@@ -886,6 +879,13 @@ p.indent{
 
 .thumbnailsContainer {
     display: inline-block;
+    margin-top: -10px;
+    background-color: white;
+    width: 100.4%;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-radius: 0px 0px 7px 7px;
+    opacity: 0.7;
 }
 
 img.display {
@@ -901,15 +901,16 @@ img.display {
 }
 
 img.thumbnail {
-    height: 30px;
     border: 1px solid #404040;
     margin-right: 4px;
     float: center;
     display: inline;
+    height: 20px;
 }
 
 .btnNext, .btnPrev {
     margin-bottom: -10px;
+    margin-top: -10px;
 }
 
 .btnNext, .btnPrev, img.thumbnail {
