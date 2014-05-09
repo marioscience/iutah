@@ -18,3 +18,8 @@ def subpages(request, pages_passed, subpage):
     pages_in_server = Page.objects.all().order_by('-title')[:5]
     context = {'pages': pages_in_server, 'requested': pages_passed, 'subpage_name': subpage}
     return render(request, 'mdfserver/main_template.html', context)
+
+def river_dynamic(request, database, site_code):
+    pages_in_server = Page.objects.all().order_by('-title')[:5]
+    context = {'pages': pages_in_server, 'database': database, 'site_code': site_code}
+    return render(request, 'mdfserver/river_dynamic.html', context)

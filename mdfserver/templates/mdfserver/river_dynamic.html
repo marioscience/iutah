@@ -1,0 +1,117 @@
+{% extends "mdfserver/index.html" %}
+{% block unique_content %}
+
+    <div id="map-canvas"></div>
+    <h1 style="padding-left: 15px">Logan River Data</h1><!-- Change this according to the river showed -->
+    <div class="most_recent">
+        <h3>Most Recent Instantaneous Measurements</h3>
+        <h4>(3/2/2014 1:15pm MST)</h4>
+
+        <p>Click an item to plot.</p>
+        {% for i in "xxxxxx" %}{# This for loop should be populated by the data or it should be hard coded. #}
+            <div class="data_box">
+                <a>
+                    <div>
+                        <p>Water Level, <span>ft</span></p>
+
+                        <p>0.85</p>
+                    </div>
+                    <img/>
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="site_data">
+        <h3>Site Data</h3>
+        <table>
+            <tbody>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+            </tr>
+            <tr>
+                <th>Hi Hellow</th>
+                <td>Bye!</td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="test_divv">
+        <p id="menu_active">This is the dynamic content dude</p>
+
+        <h1>Database: </h1>
+
+        <p>{{ database }}</p>
+
+        <h1>Site Code: </h1>
+
+        <p>{{ site_code }}</p>
+    </div>
+    <div class="watershed-image-gallery" style="width: 40%; margin-top: -250px; margin-right: 65px;">
+         <span class="thumbnailsContainer">
+            <img class="btnPrev" src="/static/mdfserver/img/prev.png" alt="">
+            <img class="thumbnail" src="/static/mdfserver/img/Untitled.png" alt="" style="border: 3px solid rgb(64, 64, 64);">
+            <img class="thumbnail" src="/static/mdfserver/img/Untitled2.png" alt="" style="border: 1px solid rgb(64, 64, 64);">
+            <img class="thumbnail" src="/static/mdfserver/img/Untitled3.png" alt="" style="border: 1px solid rgb(64, 64, 64);">
+            <img class="thumbnail" src="/static/mdfserver/img/Untitled4.png" alt="" style="border: 1px solid rgb(64, 64, 64);">
+            <img class="thumbnail" src="/static/mdfserver/img/Untitled5.png" alt="" style="border: 1px solid rgb(64, 64, 64);">
+            <img class="btnNext" src="/static/mdfserver/img/next.png" alt="">
+         </span>
+        <br>
+        <img class="display" alt="" src="/static/mdfserver/img/Untitled.png"></div>
+    </div>
+{% endblock %}
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+-->

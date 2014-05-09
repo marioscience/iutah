@@ -14,11 +14,11 @@ jQuery(document).ready(function ($) {
     $(".display").attr({'src': images[0]});
     highlightSelected();
 
-    function highlightSelected(){
+    function highlightSelected() {
         var x = 0;
         $(".thumbnail").css({'border': '1px solid #404040'});
         $('.thumbnail').each(function () {
-            if($(this).attr('src') ==  $('.display').attr('src')){
+            if ($(this).attr('src') == $('.display').attr('src')) {
                 $(this).css({'border': '3px solid #404040' });
             }
         });
@@ -26,37 +26,37 @@ jQuery(document).ready(function ($) {
 
     // Next Button handler
     var counter = 0;
-    $(".btnNext").click(function next(){
-        if(counter < images.length - 1){
-           counter++;
+    $(".btnNext").click(function next() {
+        if (counter < images.length - 1) {
+            counter++;
         }
-        else{
+        else {
             counter = 0;
         }
-        $(".display").attr({'src':images[counter]});
+        $(".display").attr({'src': images[counter]});
         highlightSelected();
     })
 
     // Prev Button trigger
-    $(".btnPrev").click(function next(){
-        if(counter > 0){
-           counter--;
+    $(".btnPrev").click(function next() {
+        if (counter > 0) {
+            counter--;
         }
-        else{
+        else {
             counter = images.length - 1;
         }
         $(".display").attr({'src': images[counter] });
         highlightSelected();
     })
 
-    $(".thumbnail").click(function(){
+    $(".thumbnail").click(function () {
         $(".thumbnail").css({'border': '1px solid #404040'});
         $(".display").attr({'src': $(this).attr('src') });
         $(this).css({'border': '3px solid #404040' });
 
         //update counter value
-        for(var i = 0; i < images.length; i++){
-            if (images[i] == $(".display").attr('src')){
+        for (var i = 0; i < images.length; i++) {
+            if (images[i] == $(".display").attr('src')) {
                 counter = i;
                 break;
             }
@@ -64,4 +64,30 @@ jQuery(document).ready(function ($) {
     })
 
     // ****** IMAGE GALLERY ENDS ********
+
+    //This function is to solve this problem: when selected the dynamic content (river_info) the home page was selected, because of the similitude of how they work. Thi
+    $("#menu_active").ready(function menuActive() {
+        if (document.getElementById("menu_active"))
+        {
+            $("li.active").addClass("dropdown");
+            $("li").removeClass("active");
+            var dataLI = $('li:contains("Data")');
+            dataLI.addClass("active");
+        }
+    });
+
 });
+
+function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(41.739711, -111.793731),
+          zoom: 16
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+

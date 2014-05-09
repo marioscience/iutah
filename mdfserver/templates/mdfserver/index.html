@@ -28,7 +28,8 @@
             <div class="navbar-inner">
                 <div class="center_header">
                     <div id="title_logo">
-                        <a id="home_linker" href="{% url 'index' %}"><img id="iutah_logo" src="{% static "mdfserver/img/iutah_logo.png" %}" alt="iUtah Logo"/>
+                        <a id="home_linker" href="{% url 'index' %}">
+                            <img id="iutah_logo" src="{% static "mdfserver/img/iutah_logo.png" %}" alt="iUtah Logo"/>
 
                         <h1 id="main_title">Modeling and Data Federation</h1>
 
@@ -40,9 +41,14 @@
                                 <a class="dropdown-toggle" data-hover="dropdown" href="{% url 'index' %}">Home</a>
                             </li>
                             {% for page in pages %}
-                                <li {% if requested == page.title %}class="dropdown active" {% else %}class="dropdown" {% endif %} >
-                                    {% if page.content != 'none' %}
-                                        <a class="dropdown-toggle"  data-hover="dropdown" href="{% url 'pages' page.title %}">
+                                <li {% if requested == page.title %}
+                                        class="dropdown active"
+                                    {% else %}
+                                        class="dropdown"
+                                    {% endif %} >
+                                    {% if page.content != 'none' and page.content != '<p>none</p>'%}
+                                        <a class="dropdown-toggle"
+                                           data-hover="dropdown" href="{% url 'pages' page.title %}">
                                              {{ page.title }}
                                         <b class="caret"></b>
                                         </a>
@@ -55,7 +61,9 @@
                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                         {% for subpage in page.subpage_set.all %}
                                             <li>
-                                                <a href="{% url 'subpages' page subpage.title %}">{{ subpage.title }}</a>
+                                                <a href="{% url 'subpages' page subpage.title %}">
+                                                    {{ subpage.title }}
+                                                </a>
                                             </li>
                                         {% endfor %}
                                     </ul>
@@ -74,7 +82,7 @@
                 {% if requested %}
                     {% block content %}{% endblock %}
                 {% else %}
-                    {% block homepage %}{% endblock %}
+                    {% block unique_content %}{% endblock %}
                 {% endif %}
             </div>
         </div>
@@ -107,12 +115,15 @@
 
 
     {% else %}
-        <p>There's something really, really wrong</p>
+        <p>The website doesn't have any content or there was an error.</p>
     {% endif %}
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="{% static "mdfserver/js/bootstrap.js" %}"></script>
 <script src="{% static "mdfserver/js/dropdown-hover.js" %}"></script>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGtObe6Ic1FeiDvC9Oxt3oWc-HWk8wuTk&sensor=false">
+</script>
 <script src="{% static "mdfserver/js/code.js" %}"></script>
 
 </body>
