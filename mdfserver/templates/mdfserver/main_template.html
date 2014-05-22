@@ -1,4 +1,5 @@
 {% extends "mdfserver/index.html" %}
+{% load static %}
 {% block content %}
     <div style="border: 1px solid rgb(220, 225, 230); padding-left: 20px; padding-right: 20px">
         {% for page in pages %}
@@ -29,7 +30,7 @@
                 <ul id="slider">
                     <li style="list-style-type: none" id="1" class="currentSlide">
                         <img class="big_image"
-                             src="/static/mdfserver/img/big_image2.jpg"
+                             src="{% static "mdfserver/img/big_image2.jpg" %}"
                              alt="">
 
                         <p class="image_msg">

@@ -1,0 +1,1 @@
+from mdfiutah.settings.base import *
