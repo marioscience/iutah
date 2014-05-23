@@ -72,7 +72,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-TINYMCE_JS_URL = os.path.join(os.environ['APPL_VIRTUAL_PATH'] + "/", "static/mdfserver/js/tiny_mce/tiny_mce.js")
+#TINYMCE_JS_URL = os.path.join(os.environ['APPL_VIRTUAL_PATH'] + "/", "static/mdfserver/js/tiny_mce/tiny_mce.js")
+TINYMCE_JS_URL = os.path.join("/", "static/mdfserver/js/tiny_mce/tiny_mce.js")
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "",
     'theme': "advanced",

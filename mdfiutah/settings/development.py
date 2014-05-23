@@ -9,3 +9,5 @@ TEMPLATE_DEBUG = True
 STATIC_URL = '/static/'
 
 SITE_URL = ''
+
+STATIC_ROOT = 'static/'

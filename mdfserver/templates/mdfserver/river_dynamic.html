@@ -1,20 +1,21 @@
 {% extends "mdfserver/index.html" %}
+{%  load static %}
 {% block unique_content %}
 
     <div id="map-canvas"></div>
     <h1 style="padding-left: 15px">Logan River Data</h1><!-- Change this according to the river showed -->
     <div class="most_recent">
         <h3>Most Recent Instantaneous Measurements</h3>
-        <h4>(3/2/2014 1:15pm MST)</h4>
+        <h4>Data update time range: {{ river_data.update_time.min }} to: {{ river_data.update_time.max }} </h4>
 
         <p>Click an item to plot.</p>
-        {% for i in "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" %}{# This for loop should be populated by the data or it should be hard coded. #}
+        {% for var in river_data.vars %}{# This for loop should be populated by the data or it should be hard coded. #}
             <div class="data_box">
                 <a>
                     <div>
-                        <p>Water Level, <span>ft</span></p>
+                        <p>{{ var.name }}, <span>{{ var.unit }}</span></p>
 
-                        <p>0.85</p>
+                        <p>{{ var.values.0 }}</p>
                     </div>
                     <img/>
                 </a>
@@ -27,50 +28,50 @@
         <table>
             <tbody>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Site Code</th>
+                <td>{{ river_data.info.code }}</td>
+                <th>Local Projection</th>
+                <td>{{ river_data.info.local_projection }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Site Name</th>
+                <td>{{ river_data.info.name }}</td>
+                <th>Positional Accuracy</th>
+                <td>{{ river_data.info.pos_accuracy }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Latitude</th>
+                <td>{{ river_data.info.latitude }}</td>
+                <th>State</th>
+                <td>{{ river_data.info.state }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Longitude</th>
+                <td>{{ river_data.info.longitude }}</td>
+                <th>County</th>
+                <td>{{ river_data.info.county }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Lat/Long Datum</th>
+                <td>{{ river_data.info.lat_long_datum }}</td>
+                <th>Comments</th>
+                <td>{{ river_data.info.comments }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Elevation</th>
+                <td>{{ river_data.info.elevation }}</td>
+                <th>Watershed</th>
+                <td>{{ river_data.info.watershed }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Local X</th>
+                <td>{{ river_data.info.local_x }}</td>
+                <th>Site Type</th>
+                <td>{{ river_data.info.site_type }}</td>
             </tr>
             <tr>
-                <th>Hi Hellow</th>
-                <td>Bye!</td>
+                <th>Local Y</th>
+                <td>{{ river_data.info.local_y }}</td>
                 <td></td>
                 <td></td>
 
@@ -80,16 +81,8 @@
     </div>
     <div id="test_divv">
         <p id="menu_active">This is the dynamic content dude</p>
-
-        <h1>Database: </h1>
-
-        <p>{{ database }}</p>
-
-        <h1>Site Code: </h1>
-
-        <p>{{ site_code }}</p>
     </div>
-    <div class="watershed-image-gallery" style="width: 40%; margin-top: -321%; margin-right: 65px;">
+    <div class="watershed-image-gallery" id="" style="width: 40%; margin-top: -321%; margin-right: 65px;">
          <span class="thumbnailsContainer">
             <img class="btnPrev" src="/static/mdfserver/img/prev.png" alt="">
             <img class="thumbnail" src="/static/mdfserver/img/Untitled.png" alt="" style="border: 3px solid rgb(64, 64, 64);">
@@ -102,6 +95,14 @@
         <br>
         <img class="display" alt="" src="/static/mdfserver/img/Untitled.png"></div>
     </div>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGtObe6Ic1FeiDvC9Oxt3oWc-HWk8wuTk&sensor=false">
+    </script>
+    <script src="{% static "mdfserver/js/g_maps.js" %}"></script>
+    <script>
+        google.maps.event.addDomListener(window, 'load', initialize({{ river_data.info.latitude }}, {{ river_data.info.longitude }}));
+    </script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 {% endblock %}
 
 <!--

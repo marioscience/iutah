@@ -78,15 +78,11 @@ jQuery(document).ready(function ($) {
 
 });
 
-function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(41.739711, -111.793731),
-          zoom: 16
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
 
 
 
