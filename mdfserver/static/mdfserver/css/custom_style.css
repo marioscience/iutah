@@ -1,5 +1,24 @@
 /*Custom Style File*/
 
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+
 #iutah_logo {
     float: left;
     clear: both;
@@ -882,23 +901,36 @@ p.indent{
     color: #444;
 }
 
-.data_box img
+.graphContainer
 {
     float:right;
     position: relative;
-   /* border: 1px solid black;*/
+   border: 1px solid black;
     width: 150px;
     height: 55px;
     margin-top: -53px;
 }
 
+#data-watershed-gallery
+{
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 970px;
+}
+
 .site_data
 {
-    width: 50%;
-    float: right;
-    /*border: 1px solid #000000;*/
-   /* margin-top:-334.2%; */
+    width: 30%;
+    /* float: right; */
+    /* border: 1px solid #000000; */
+    margin-top: 32.2%;
+    margin-right: 343px;
     padding: 0px 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .most_recent h4
