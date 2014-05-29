@@ -5,6 +5,7 @@
     <div id="map-canvas"></div>
     <h1 style="padding-left: 15px">Logan River Data</h1><!-- Change this according to the river showed -->
     <div class="most_recent">
+    <div class="info_space"></div>
         <h3>Most Recent Instantaneous Measurements</h3>
         <h4>Data update time range: {{ river_data.update_time.min }} to: {{ river_data.update_time.max }} </h4>
 
@@ -13,9 +14,9 @@
             <div class="data_box">
                 <a>
                     <div>
-                        <p>{{ var.name }}, <span>{{ var.unit }}</span></p>
-
-                        <p>{{ var.values.0 }}</p>
+                        <p class="var_name">{{ var.name }}, <span>{{ var.unit }}</span></p>
+                        <br>
+                        <p class="var_value">{{ var.values.0 }}</p>
                     </div>
                     <div id="graph{{ forloop.counter0 }}" class="graphContainer"></div>
                 </a>
@@ -79,10 +80,10 @@
             </tbody>
         </table>
     </div>
-    <div id="test_divv">
+    <!--<div id="test_divv">
         <p id="menu_active">This is the dynamic content dude</p>
-    </div>
-    <div class="watershed-image-gallery" id="data-watershed-gallery" style="width: 40%;  margin-right: 65px;">
+    </div> -->
+    <div class="watershed-image-gallery" id="data-watershed-gallery" >
          <span class="thumbnailsContainer">
             <img class="btnPrev" src="/static/mdfserver/img/prev.png" alt="">
             <img class="thumbnail" src="/static/mdfserver/img/Untitled.png" alt="" style="border: 3px solid rgb(64, 64, 64);">

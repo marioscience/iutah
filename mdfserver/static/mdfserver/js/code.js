@@ -108,8 +108,8 @@ function drawSeries() {
     filenames = {"iUTAH_Logan_OD": "Logan", "iUTAH_Provo_OD": "Provo", "iUTAH_RedButte_OD": "RedButte"};
     var site = filenames[database];
 
-    console.log("database: " + database + "\n");
-    console.log("site: " + site + "\n");
+    //console.log("database: " + database + "\n");
+    //console.log("site: " + site + "\n");
 
 
 
@@ -117,9 +117,9 @@ function drawSeries() {
         var graphCounter = -1;
         var captureRegex = new RegExp(database + "/(.[^/]*)/", "g");
         d = captureRegex.exec(document.URL)[1];
-        console.log("site:" + d);
+        //console.log("site:" + d);
         for (var i = 0; i < data[d].vars.length; i++) {
-            console.log(data[d].vars[i]['values']);
+            //console.log(data[d].vars[i]['values']);
             var myData = [];
             var counter = 0;
             data[d].vars[i]['values'].forEach(function (value) {
