@@ -1,7 +1,8 @@
 function initialize(lat, long) {
     var mapOptions = {
         center: new google.maps.LatLng(lat, long),
-        zoom: 16
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
     };
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
@@ -17,4 +18,9 @@ function initialize(lat, long) {
         map.setCenter(marker.getPosition());
     });
 
+
+
 }
+
+
+

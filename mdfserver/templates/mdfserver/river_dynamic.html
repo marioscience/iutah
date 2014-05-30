@@ -78,9 +78,6 @@
             </tbody>
         </table>
     </div>
-    <!--<div id="test_divv">
-        <p id="menu_active">This is the dynamic content dude</p>
-    </div> -->
     <div class="watershed-image-gallery" id="data-watershed-gallery" >
          <span class="thumbnailsContainer">
             <img class="btnPrev" src="/static/mdfserver/img/prev.png" alt="">
@@ -102,6 +99,7 @@
         google.maps.event.addDomListener(window, 'load', initialize({{ river_data.info.latitude }}, {{ river_data.info.longitude }}));
     </script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="{% static "mdfserver/js/graphs.js" %}"></script>
 {% endblock %}
 
 <!--

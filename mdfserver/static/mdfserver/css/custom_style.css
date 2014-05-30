@@ -199,6 +199,11 @@ img {
     max-width: 1800px;
 }
 
+a img
+{
+    max-width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #425766;
     letter-spacing: 0em;
@@ -815,10 +820,35 @@ p.indent{
     /* top: 25px; */
     float: right;
     width: 60%;
-    height: 277px;
+    height: 310px;
     text-align: center;
-    margin-bottom: -20px;
+    width: 66%;
 }
+
+table:hover
+{
+    cursor: cell;
+}
+
+#data-watershed-gallery
+{
+    border: 0px solid black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 615px;
+    width: 24.1%;
+    margin-right: 21.82%;
+    height: 316px;
+    margin-bottom: -20px;
+
+}
+
+#data-watershed-gallery img.display
+{
+    max-height: 314px;
+}
+
 
 .thumbnail {
     background: rgba(0, 0, 0, 0.2);
@@ -900,7 +930,8 @@ p.indent{
 
 .var_name
 {
-        min-width: 135px;
+       max-width: 30%;
+        min-width: 128px;
        float: left;
        text-align: center;
        line-height: 16px;
@@ -940,6 +971,7 @@ svg
     text-align: center;
     line-height: 16px;
     padding: 0px;
+    padding-top: 2px;
 
 }
 
@@ -954,21 +986,6 @@ svg
     text-decoration: none;
     font: normal arial, sans-serif;
     color: #444;
-}
-
-
-
-#data-watershed-gallery
-{
-    border: 0px solid black;
-    margin-top: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 615px;
-    width: 24.1%;
-    margin-right: 21.82%;
-    height: 316px;
 }
 
 .site_data
@@ -1011,7 +1028,7 @@ img.display {
 }
 
 img.thumbnail {
-    border: 1px solid #404040;
+    /*border: 1px solid #404040;*/
     margin-right: 4px;
     float: center;
     display: inline;
@@ -1176,6 +1193,10 @@ div.leftCollagePanel {
     border: 1px solid;
     padding: 2px;
     float: inherit;
+}
+.navbar
+{
+    margin-bottom: 0px;
 }
 
 .node-unpublished {
