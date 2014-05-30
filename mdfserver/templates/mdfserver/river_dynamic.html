@@ -3,13 +3,13 @@
 {% block unique_content %}
 
     <div id="map-canvas"></div>
-    <h1 style="padding-left: 15px">Logan River Data</h1><!-- Change this according to the river showed -->
+    <h1 style="padding-left: 15px">
+        Site Data
+    </h1><!-- Change this according to the river showed -->
     <div class="most_recent">
     <div class="info_space"></div>
         <h3>Most Recent Instantaneous Measurements</h3>
         <h4>Data update time range: {{ river_data.update_time.min }} to: {{ river_data.update_time.max }} </h4>
-
-        <p>Click an item to plot.</p>
         {% for var in river_data.vars %}{# This for loop should be populated by the data or it should be hard coded. #}
             <div class="data_box">
                 <a>
@@ -22,10 +22,8 @@
                 </a>
             </div>
         {% endfor %}
-
     </div>
     <div class="site_data">
-        <h3>Site Data</h3>
         <table>
             <tbody>
             <tr>
