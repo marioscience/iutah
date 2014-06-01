@@ -6,23 +6,6 @@
     <h1 style="padding-left: 15px">
         Site Data
     </h1><!-- Change this according to the river showed -->
-    <div class="most_recent">
-    <div class="info_space"></div>
-        <h3>Most Recent Instantaneous Measurements</h3>
-        <h4>Data update time range: {{ river_data.update_time.min }} to: {{ river_data.update_time.max }} </h4>
-        {% for var in river_data.vars %}{# This for loop should be populated by the data or it should be hard coded. #}
-            <div class="data_box">
-                <a>
-                    <div>
-                        <p class="var_name">{{ var.name }}, <span>{{ var.unit }}</span></p>
-                        <br>
-                        <p class="var_value">{{ var.values.0 }}</p>
-                    </div>
-                    <div id="graph{{ forloop.counter0 }}" class="graphContainer"></div>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
     <div class="site_data">
         <table>
             <tbody>
@@ -90,6 +73,23 @@
          </span>
         <br>
         <img class="display" alt="" src="/static/mdfserver/img/Untitled.png"></div>
+    </div>
+    <div class="most_recent">
+    <!--<div class="info_space"></div>-->
+        <h3 style="margin-top: 0px;">Most Recent Instantaneous Measurements</h3>
+        <h4>Data update time range: {{ river_data.update_time.min }} to: {{ river_data.update_time.max }} </h4>
+        {% for var in river_data.vars %}{# This for loop should be populated by the data or it should be hard coded. #}
+            <div class="data_box">
+                <a>
+                    <div>
+                        <p class="var_name">{{ var.name }}, <span>{{ var.unit }}</span></p>
+                        <br>
+                        <p class="var_value">{{ var.values.0 }}</p>
+                    </div>
+                    <div id="graph{{ forloop.counter0 }}" class="graphContainer"></div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGtObe6Ic1FeiDvC9Oxt3oWc-HWk8wuTk&sensor=false">

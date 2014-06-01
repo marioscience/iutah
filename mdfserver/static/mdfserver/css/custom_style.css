@@ -833,20 +833,18 @@ table:hover
 #data-watershed-gallery
 {
     border: 0px solid black;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 615px;
-    width: 24.1%;
-    margin-right: 21.82%;
+    position: relative;
+    display: inline-block;
+    /*margin-right: 21.82%;*/
     height: 316px;
-    margin-bottom: -20px;
+    margin-top: 47px;
+     width: 43%;
 
 }
 
 #data-watershed-gallery img.display
 {
-    max-height: 314px;
+    max-height: 346px;
 }
 
 
@@ -991,14 +989,15 @@ svg
 .site_data
 {
     border: 0px solid black;
-    width: 31%;
+    width: 53%;
     /* float: right; */
     /* border: 1px solid #000000; */
-    margin-top: 34.2%;
-    margin-right: 21%;
+    /*margin-top: 34.2%;*/
+    /*margin-right: 21%;*/
     padding: 0px 0px;
-    position: absolute;
-    top: 0;
+    position: relative;
+    display: inline-block;
+    /*top: 0;*/
 }
 
 .most_recent h4
@@ -1018,12 +1017,12 @@ img.display {
     margin: 0 auto;
     display: block;
     border: 1px solid #404040;
-    box-shadow: 3px 3px 2px #818181;
+    /*box-shadow: 3px 3px 2px #818181;*/
     position: absolute;
     z-index: -1000;
     z-index: -1000;
     margin-top: -52px;
-    width: 400px;
+    width: 405px;
     height: 341px;
 }
 
