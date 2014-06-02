@@ -4,7 +4,7 @@
 
     <div id="map-canvas"></div>
     <h1 style="padding-left: 15px">
-        Site Data
+        {{ river_data.info.name }}
     </h1><!-- Change this according to the river showed -->
     <div class="site_data">
         <table>
@@ -15,12 +15,12 @@
                 <th>Local Projection</th>
                 <td>{{ river_data.info.local_projection }}</td>
             </tr>
-            <tr>
+            <!--<tr>
                 <th>Site Name</th>
                 <td>{{ river_data.info.name }}</td>
                 <th>Positional Accuracy</th>
                 <td>{{ river_data.info.pos_accuracy }}</td>
-            </tr>
+            </tr> -->
             <tr>
                 <th>Latitude</th>
                 <td>{{ river_data.info.latitude }}</td>
@@ -77,10 +77,12 @@
     <div class="most_recent">
     <!--<div class="info_space"></div>-->
         <h3 style="margin-top: 0px;">Most Recent Instantaneous Measurements</h3>
-        <h4>Data update time range: {{ river_data.update_time.min }} to: {{ river_data.update_time.max }} </h4>
+        <h4>Data update time: {{ river_data.update_time.max }} </h4>
+        <p class="disclaimer" id="dyn_disclaimer">The data presented here is provisional and subject to revision</p>
+        <p id="plot_prompt">Click a box to plot a variable &#x25BC;</p>
         {% for var in river_data.vars %}{# This for loop should be populated by the data or it should be hard coded. #}
             <div class="data_box">
-                <a>
+                <a href="http://data.iutahepscor.org/tsa/?sitecode={{ river_data.info.code }}&variablecode={{ var.code }}&view=visualization&plot=true" target="_blank">
                     <div>
                         <p class="var_name">{{ var.name }}, <span>{{ var.unit }}</span></p>
                         <br>

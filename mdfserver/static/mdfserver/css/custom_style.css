@@ -848,6 +848,8 @@ table:hover
 }
 
 
+
+
 .thumbnail {
     background: rgba(0, 0, 0, 0.2);
     padding: 0px;
@@ -889,28 +891,35 @@ table:hover
    margin-left: 237px;
 }
 
-.data_box
+.most_recent h4
 {
-    border: 1px solid darkblue;
-    float: left;
-    width: 30%;
-    height: 90px;
-    margin-bottom: 15px;
-    margin-left: -1.6%;
-    margin-right: 4.3%;
-    box-shadow:   1px 1px 3px 4px #ccc;
+    margin-top: -6px;
+    margin-bottom: -10px;
+    padding-bottom: 0px;
 }
 
-.data_box:hover
+#plot_prompt
 {
-    border: 1px inset #999;
-    float: left;
-    width: 30%;
-    margin-left: -1.6%;
-    margin-right: 4.3%;
-    margin-bottom: 15px;
-    box-shadow: 3px 3px 5px 6px #ccc;
-    cursor: pointer;
+    width: 230px;
+    font-weight: bold;
+    display: inline-block;
+    /* margin-left: 266px; */
+    margin-bottom: 10px;
+    border: 4px double lightgray;
+    border-radius: 41px;
+    padding: 4px;
+    /* background: #425766; */
+    color: #787878;
+    position: relative;
+    top: -25px;
+    left: 29px;
+}
+
+#dyn_disclaimer
+{
+    padding-bottom: 9px;
+    margin-left: 0px;
+    display: inline-block;
 }
 
 .graphContainer
@@ -958,6 +967,30 @@ svg
     margin-bottom: 20px;
 }
 
+.data_box
+{
+    border: 1px solid darkblue;
+    float: left;
+    width: 30%;
+    height: 90px;
+    margin-bottom: 15px;
+    margin-left: -1.6%;
+    margin-right: 4.3%;
+    box-shadow:   1px 1px 3px 4px #ccc;
+}
+
+.data_box:hover
+{
+    border: 1px inset #999;
+    float: left;
+    width: 30%;
+    margin-left: -1.6%;
+    margin-right: 4.3%;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    cursor: pointer;
+}
+
 .data_box div
 {
    /* border: 1px solid brown;*/
@@ -1000,11 +1033,6 @@ svg
     /*top: 0;*/
 }
 
-.most_recent h4
-{
-    padding-bottom: 27px;
-    margin-bottom: -10px;
-}
 
 .site_data table
 {
