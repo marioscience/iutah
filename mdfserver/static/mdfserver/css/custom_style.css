@@ -79,8 +79,10 @@
 }
 
 .big_image {
-    width: 87%;
+    /*width: 87%;*/
     height: 440px;
+    overflow: hidden;
+    margin-left: -16%;
 }
 
 .image_msg {
