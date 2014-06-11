@@ -31,9 +31,10 @@
                         <a id="home_linker" href="{% url 'index' %}">
                             <img id="iutah_logo" src="{% static "mdfserver/img/iutah_logo.png" %}" alt="iUtah Logo"/>
 
-                        <h1 id="main_title">Modeling and Data Federation</h1>
+                            <h1 id="main_title">Modeling and Data Federation</h1>
 
-                        <h4 id="second_title">innovative Urban Transitions and Aridregion Hydro-sustainability</h4></a>
+                            <h4 id="second_title">innovative Urban Transitions and Aridregion Hydro-sustainability</h4>
+                        </a>
                     </div>
                     <div class="container">
                         <ul class="nav">
@@ -42,19 +43,19 @@
                             </li>
                             {% for page in pages %}
                                 <li {% if requested == page.title %}
-                                        class="dropdown active"
-                                    {% else %}
-                                        class="dropdown"
-                                    {% endif %} >
-                                    {% if page.content != 'none' and page.content != '<p>none</p>'%}
+                                    class="dropdown active"
+                                {% else %}
+                                    class="dropdown"
+                                {% endif %} >
+                                    {% if page.content != 'none' and page.content != '<p>none</p>' %}
                                         <a class="dropdown-toggle"
                                            data-hover="dropdown" href="{% url 'pages' page.title %}">
-                                             {{ page.title }}
-                                        <b class="caret"></b>
+                                            {{ page.title }}
+                                            <b class="caret"></b>
                                         </a>
                                     {% else %}
                                         <a class="dropdown-toggle" data-hover="dropdown">
-                                             {{ page.title }}
+                                            {{ page.title }}
                                             <b class="caret"></b>
                                         </a>
                                     {% endif %}
@@ -125,3 +126,4 @@
 
 </body>
 </html>
+

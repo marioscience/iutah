@@ -4,26 +4,46 @@ from mdfserver.models import Page, Subpage
 from tinymce.widgets import TinyMCE
 
 # Register your models here.
-class SubpagesAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.TextField: {'widget': TinyMCE(attrs={'cols': 140, 'rows': 60}, )}
-    }
 
-    fieldsets = [
-        (None,      {'fields': ['title']}),
-        ('Content', {'fields': ['content']}),
+# Register your models here.
+class SubpagesInline(admin.StackedInline):
+     model = Subpage
+     extra = 1
+
+ class PageAdmin(admin.ModelAdmin):
+     formfield_overrides = {
+         models.TextField: {'widget': TinyMCE(attrs={'cols': 140, 'rows': 60}, )}
+     }
+
+     fieldsets = [
+         (None,      {'fields': ['title']}),
+         ('Content', {'fields': ['content']}),
+         #('Sub Pages', {'fields': [], 'classes':['collapse']}),
     ]
+    inlines = [SubpagesInline]
 
-class PageAdmin(admin.ModelAdmin):
+ admin.site.register(Page, PageAdmin)
 
-    formfield_overrides = {
-        models.TextField: {'widget': TinyMCE(attrs={'cols': 140, 'rows': 60}, )}
-    }
-
-    fieldsets = [
-        (None,      {'fields': ['title']}),
-        ('Content', {'fields': ['content']}),
-    ]
-
-admin.site.register(Page, PageAdmin)
-admin.site.register(Subpage, SubpagesAdmin)
+# class SubpagesAdmin(admin.ModelAdmin):
+#     formfield_overrides = {
+#         models.TextField: {'widget': TinyMCE(attrs={'cols': 140, 'rows': 60}, )}
+#     }
+#
+#     fieldsets = [
+#         (None,      {'fields': ['title']}),
+#         ('Content', {'fields': ['content']}),
+#     ]
+#
+# class PageAdmin(admin.ModelAdmin):
+#
+#     formfield_overrides = {
+#         models.TextField: {'widget': TinyMCE(attrs={'cols': 140, 'rows': 60}, )}
+#     }
+#
+#     fieldsets = [
+#         (None,      {'fields': ['title']}),
+#         ('Content', {'fields': ['content']}),
+#     ]
+#
+# admin.site.register(Page, PageAdmin)
+# admin.site.register(Subpage, SubpagesAdmin)
