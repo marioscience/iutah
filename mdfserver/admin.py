@@ -15,7 +15,6 @@ class SubpagesAdmin(admin.ModelAdmin):
     ]
 
 class PageAdmin(admin.ModelAdmin):
-
     formfield_overrides = {
         models.TextField: {'widget': TinyMCE(attrs={'cols': 140, 'rows': 60}, )}
     }
