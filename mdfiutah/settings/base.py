@@ -77,7 +77,7 @@ TINYMCE_JS_URL = os.path.join("/", "static/mdfserver/js/tiny_mce/tiny_mce.js")
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "",
     'theme': "advanced",
-    'cleanup_on_startup': True,
+    'cleanup_on_startup': False,
     'custom_undo_redo_levels': 10,
 	'relative_urls' : False,
 }

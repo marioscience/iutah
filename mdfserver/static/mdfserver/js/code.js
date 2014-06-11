@@ -79,9 +79,14 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    if (document.URL.indexOf("river_info"))
+    if (document.URL.indexOf("river_info") != -1)
+    {
         drawSeries();
+    }
 
+    $('.carousel').carousel({
+         interval: 4500
+       });
 
 });
 
