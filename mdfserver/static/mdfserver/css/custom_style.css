@@ -949,13 +949,14 @@ table:hover
     display: inline-block;
     /* margin-left: 266px; */
     margin-bottom: 10px;
-    border: 4px double lightgray;
-    border-radius: 41px;
-    padding: 4px;
+    border-top: 0px inset lightgray;
+    border-bottom: 4px dotted lightgray;
+    border-radius: -2px;
+    padding: 0px;
     /* background: #425766; */
-    color: #787878;
+    color: #787886;
     position: relative;
-    top: -25px;
+    top: -16px;
     left: 29px;
 }
 
