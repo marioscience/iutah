@@ -8,6 +8,7 @@ TEMPLATE_DEBUG = True
 
 STATIC_URL = '/static/'
 
-SITE_URL = ''
+SITE_URL = '/mdf/'
 
 STATIC_ROOT = 'static/'
+STATIC_URL = SITE_URL + 'static/'
